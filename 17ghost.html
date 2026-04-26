@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Thank you </title>
+</head>
+<body>
+    <p id="text">Thank You</p>
+    <style>
+        p{
+            font-size: 200px;
+            text-align: center;
+            font-family:fantasy ;
+            color:aqua
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+    <script>
+         
+    const p=['#ebb113','#43a628','#7852d1','#f030d9','#d14972','#6c8ccc'];
+    let num=0;
+    function changepColor(){
+        const t=document.getElementById('text');
+       t.style.color=p[num];
+       num++;
+       if (num===p.length){
+        num=0;
+       }  
+    }
+setInterval(changepColor,1000);
+    </script>
+</body>
