@@ -13,6 +13,7 @@
             <audio id="music" loop autoplay >
                 <source src="l_amore_dice_ciao.mp3" type="audio/mpeg">
             </audio>
+            <button id="topBtn" onclick="playMusic()">Music</button>
        
         <div class="animation">
             <video autoplay muted id="vid1">
@@ -65,6 +66,17 @@
             </div>
         </div>
         <script>
+             function playMusic(){
+              var music=document.getElementById('music');
+              var btn=document.getElementById('topBtn')
+                if(music.paused){
+                    music.play();
+                    topBtn.textContent="Start";}
+                    else{
+                        music.pause();
+                        topBtn.textContent="Stop";
+                    }
+            }
             const vid1=document.getElementById('vid1');
             const vid2=document.getElementById('vid2');
             const popup=document.getElementById('popup');
@@ -385,6 +397,14 @@ clsBtn.addEventListener("click", function () {
 frame16.addEventListener("click", function () {
  modalContainer.style.display = "flex";
 wall.src='16lemon.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+ frame17.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='17ghost.html';
 });
 
 clsBtn.addEventListener("click", function () {
