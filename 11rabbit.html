@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> code </title>
+
+    </head>
+    <body>
+        <h1>This program will give you a list of the first even numbers till the limit number you give.</h1>
+        <hr>
+        <h2> Please enter the end value: </h2>
+        <input type="text" id="num" placeholder="Enter value here">
+        <br><br>
+        <h4> Here is the list:</h4>
+        <button onclick="answer()">Click me!</button>
+        <script>
+            function answer(){
+                
+                let a= parseFloat(document.getElementById("num").value);
+                let i=0;
+                while(i<=a){
+                    document.write(i);
+                    document.write("<br>");
+                    i=i+2;
+                }
+            }
+                </script>
+    </body>
+</html>

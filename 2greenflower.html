@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>More strings</title>
+      
+    </head>
+    <body>
+        <h1>This program lets you</h1>
+        <ol>
+            <li>Enter a string of your choice</li>
+            <li>check if it includes the word java</li>
+            <li>extract first five characters</li>
+            <li>replace a word of your choice</li>
+            <li>split the string</li>
+            <li>trim extra spaces</li>
+        </ol>
+        <input type="text" id="inputText" placeholder="enter text here">
+        <br>
+        <div class="buttonContainer">
+
+            <button onclick="java()">Java</button>
+            <button onclick="fiveChar()">Five characters</button>
+            <button onclick="replaceWord()">Replace</button>
+            <button onclick="splitString()">Split string</button>
+            <button onclick="trim()">Trim</button>
+        </div>
+        <div id="java"></div>
+        <div id="fiveChar"></div>
+        <div id="replace"></div>
+        <div id="split"></div>
+        <div id="trim"></div>
+
+
+        <script>
+            function java(){
+                let str=document.getElementById("inputText").value;
+                if (str.includes("java")){
+                    document.getElementById("java").innerHTML="This includes the word java in it";
+                }
+                else{
+                    document.getElementById("java").innerHTML="This does not contain the word java";
+                }
+            }
+            function fiveChar(){
+               let str= document.getElementById("inputText").value;
+               document.getElementById("fiveChar").innerHTML= str.substring(0,5);
+               
+            }
+            function replaceWord(){
+                let str= document.getElementById("inputText").value;
+                document.getElementById("replace").innerHTML=str.replace("hello",'hi');
+
+            }
+            function splitString(){
+            let str = document.getElementById("inputText").value;
+             let words = str.split(" ");
+             document.getElementById("split").innerHTML=words;
+            }
+            function trim(){
+                let str=document.getElementById("inputText").value;
+                document.getElementById('trim').innerHTML=str.trim();
+
+            }
+        </script>
+    </body>
+</html>

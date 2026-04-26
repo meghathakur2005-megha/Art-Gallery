@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Program</title>
+</head>
+<body>
+<h2> This program gives you:</h2>
+<ul>
+    <li>List of five students and their marks in 4 subjects</li>
+    <li>Then it tells how many students have passed the exams</li>
+    <li>Tells the hights and the lowest marks</li>
+    <li>Tells the average of the class</li>
+
+</ul>
+
+<table>
+  <tr>
+    <th>Student name</th>
+    <th>Maths</th>
+    <th>Science</th>
+    <th>English</th>
+    <th>Social studies</th>
+  </tr>
+  <tr>
+    <td>Rashi</td>
+    <td>78</td>
+    <td>85</td>
+    <td>90</td>
+    <td>88</td>
+  </tr>
+  <tr>
+    <td>Kokila</td>
+    <td>67</td>
+    <td>72</td>
+    <td>80</td>
+    <td>75</td>
+  </tr>
+  <tr>
+    <td>Gopi</td>
+    <td>45</td>
+    <td>50</td>
+    <td>55</td>
+    <td>60</td>
+    </tr>
+
+    <tr>
+        <td>Ahem</td>
+        <td>92</td>
+        <td>88</td>
+        <td>84</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>Mota Bhabhi</td>
+        <td>30</td>
+        <td>40</td>
+        <td>35</td>
+        <td>45</td>
+    </tr>
+</table>
+
+<style>
+    table{background-color: beige;
+    border-collapse: collapse;}
+    table,th,td{
+        border: 1px solid black;
+        padding: 2px;
+        text-align: center;
+
+    }
+   ul{text-align: center;}
+   h2{text-align: center;}
+   table{
+    margin-left: auto;
+    margin-right: auto;
+   }
+</style>
+<script>
+
+// Marks of 5 students in 4 subjects
+let marks = [
+    [78, 85, 90, 88], // Student 1
+    [67, 72, 80, 75], // Student 2
+    [45, 50, 55, 60], // Student 3
+    [92, 88, 84, 90], // Student 4
+    [30, 40, 35, 45]  // Student 5
+];
+
+let passMarks = 40;
+
+let highest = marks[0][0];
+let lowest = marks[0][0];
+let total = 0;
+let passCount = 0;
+
+let studentCount = 5;
+let subjectCount = 4;
+
+// Loop through students and subjects
+for (let i = 0; i < studentCount; i++) {
+
+    let studentPassedAll = true;
+
+    for (let j = 0; j < subjectCount; j++) {
+
+        let score = marks[i][j];
+
+        // Highest marks
+        if (score > highest) {
+            highest = score;
+        }
+
+        // Lowest marks
+        if (score < lowest) {
+            lowest = score;
+        }
+
+        // Total marks
+        total = total + score;
+
+        // Check pass condition
+        if (score < passMarks) {
+            studentPassedAll = false;
+        }
+    }
+
+    // Count students who passed all subjects
+    if (studentPassedAll) {
+        passCount++;
+    }
+}
+
+// Calculate average
+let average = total / (studentCount * subjectCount);
+
+// Output using document.write
+document.write("<h2>Class Result</h2>");
+document.write("Highest Marks: " + highest + "<br>");
+document.write("Lowest Marks: " + lowest + "<br>");
+document.write("Average Marks: " + average + "<br>");
+document.write("Students Passed: " + passCount);
+
+</script>
+
+</body>
+</html>

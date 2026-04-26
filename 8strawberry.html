@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Find the greatest number
+        </title>
+    </head>
+    <body>
+        <input type="textbox" id="num1" placeholder="Enter number 1"><br>
+        <input type="textbox" id="num2" placeholder="Enter number 2"><br>
+        <input type="textbox" id="num3" placeholder="Enter number 3"><br>
+
+        <button onclick="findgreatest()"> The Greatest Number is</button>
+        <h3 id="result"></h3>
+        <script>
+            function thegreatest(n1,n2,n3){
+                return Math.max(n1,n2,n3);
+            }
+function findgreatest(){
+    let n1=parseFloat(document.getElementById("num1").value);
+    let n2=parseFloat(document.getElementById("num2").value);
+    let n3=parseFloat(document.getElementById("num3").value);
+    let answer= thegreatest(n1,n2,n3);
+document.getElementById("result").innerHTML=answer;
+}
+
+
+        </script>
+        <hr>
+        <h2>Find the days of the current month</h2>
+        <p id="days"></p>
+        <script>
+            let d=new Date();
+            let msg="";
+            switch(d.getMonth()+1){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    msg="current month has 31 days";
+                    break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        msg="current month has 30 days";
+                        break;
+                    case 2: 
+                    if (d.getYear()%4==0)
+                    msg="current month has 29 days";
+                else
+                msg="current month has 28 days";
+            
+        
+                            
+            }
+            document.getElementById("days").innerHTML=msg;
+            document.write("wooooowwwww done!");
+        </script>
+        <hr>
+        <h2>A program to enter a number between one and five to get a fruit name</h2>
+        <p id="fruit"> </p>
+        <script>
+            let a =Number(prompt("enter a number between 1 and 5"));
+            let answer="";
+            switch(a){
+            case 1: 
+            answer="apple";
+            break;
+            case 2: 
+            answer="banana";
+            break;
+            case 3: 
+            answer="mango";
+            break;
+            case 4: 
+            answer="orange";
+            break;
+            case 5: 
+            answer="grapes";
+            break;
+            default: answer="number invalid";
+            break;
+            
+            
+        }
+        document.getElementById("fruit").innerHTML=answer;
+        </script>
+        <hr>
+        <h2>This is a program where if you can enter three numbers and you can then add, subtract,multiply, divide and find the greatest and the smallest of the three numbers.
+
+        </h2>
+        <input type="text" id="x" placeholder="enter no.1"> <br><br>
+        <input type="text" id="y" placeholder="enter no.2"> <br><br>
+        <input type="text" id="z" placeholder="enter no.3"> <br><br>
+        <p> Please press:1 for:adding</p>
+        <p> Please press:2for:subtracting</p>
+        <p> Please press:3 for:multiplying</p>
+        <p> Please press:4 for:dividing</p>
+        <p> Please press:5 for:greatest number</p>
+        <p> Please press:6 for:least number</p>
+        <button onclick=" foradding()">1</button>
+        <button onclick="forsubtracting()">2</button>
+        <button onclick=" formultiplying()">3</button>
+        <button onclick ="fordividing()">4</button>
+        <button onclick ="forgreat()">5</button>
+        <button onclick ="forleast()">6</button>
+        <p id="wow"></p>
+        <script>
+            function getvalue(){
+
+                let m=parseFloat(document.getElementById("x").value);
+                let n=parseFloat(document.getElementById("y").value);
+                let o=parseFloat(document.getElementById("z").value);
+                return [m,n,o];
+             }
+             function foradding(){
+                [m,n,o]=getvalue();
+                document.getElementById("wow").innerHTML=m+n+o;
+             }
+             function forsubtracting(){
+                [m,n,o]=getvalue();
+                document.getElementById("wow").innerHTML=m-n-o;
+             }
+             function formultiplying(){
+                [m,n,o]=getvalue();
+                document.getElementById("wow").innerHTML=m*n*o;
+             }
+             function fordividing(){
+                [m,m,o]=getvalue();
+                document.getElementById("wow").innerHTML=m/n/o;
+             }
+             function forgreat(){
+                [m,n,o]=getvalue();
+                document.getElementById("wow").innerHTML=Math.max(m,n,o);
+             }
+             function forleast(){
+                [m,n,o]=getvalue();
+                document.getElementById("wow").innerHTML=Math.min(m,n,o);
+             }
+
+
+
+            
+            </script>
+
+
+    </body>
+</html>

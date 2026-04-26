@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Marks</title>
+    
+    </head>
+    <body>
+        <h1>Results</h1>
+        <h2>This program lets you</h2>
+        <ol>
+            <li>Enter marks of diffrent subjects</li>
+            <li>Calculate the total marks</li>
+            <li>Find the Percentage</li>
+            <li>Find the Grade</li>
+        </ol>
+        <hr>
+        <input type="text" id="name" placeholder="Enter you name">
+        <br><br>
+        <input type="text" id="maths" placeholder="Maths">
+        <br><br>
+        <input type="text" id="science" placeholder="Science">
+        <br><br>
+        <input type="text" id="sscience" placeholder="Social Science">
+        <br><br>
+        <input type="text" id="english" placeholder="English">
+        <br><br>
+        <input type="text" id="hindi" placeholder="Hindi">
+        <br><br><hr>
+        <button onclick="totalNum()">Total Marks</button>
+        <br>
+        <div class id="marks"></div>
+        <br>
+        <button onclick="percentage()">Percentage</button>
+        <div class id="percentage"></div><br>
+        <button onclick="grade()">Grade</button>
+        <div class id="grade"></div>
+
+
+        <script>
+            function totalNum(){
+                let m=parseInt(document.getElementById('maths').value);
+                let s= parseInt(document.getElementById('science').value);
+                let ss=parseInt(document.getElementById('sscience').value);
+                let e=parseInt(document.getElementById('english').value);
+                let h=parseInt(document.getElementById('hindi').value);
+                let name=document.getElementById('name').value;
+                let total=m+s+ss+e+h;
+                document.getElementById('marks').innerHTML='The total marks of'+ name+'is '+total+'/500';
+            }
+            function percentage(){
+                let m=parseInt(document.getElementById('maths').value);
+                let s= parseInt(document.getElementById('science').value);
+                let ss=parseInt(document.getElementById('sscience').value);
+                let e=parseInt(document.getElementById('english').value);
+                let h=parseInt(document.getElementById('hindi').value);
+                let total=m+s+ss+e+h;
+                
+                let percen=total/500*100;
+                document.getElementById('percentage').innerHTML='The percentage is'+ percen+'%';
+            }
+            function grade(){
+                let m=parseInt(document.getElementById('maths').value);
+                let s= parseInt(document.getElementById('science').value);
+                let ss=parseInt(document.getElementById('sscience').value);
+                let e=parseInt(document.getElementById('english').value);
+                let h=parseInt(document.getElementById('hindi').value);
+                let total=m+s+ss+e+h;
+                let percen=total/500*100;
+                if(percen>=90&&percen<100){
+                    document.getElementById('grade').innerHTML='The grade of the student is A+';
+                }
+                else if(percen>=80&&percen<90){
+                    document.getElementById('grade').innerHTML='The grade of the student is A';
+                }
+                else if (percen>=70&&percen<80){
+                    document.getElementById('grade').innerHTML='The grade of the student is B+';
+                }
+                else if (percen>=60&&percen<70){
+                    document.getElementById('grade').innerHTML='The grade of the student is B';
+                }
+                else if (percen>=50&&percen<60){
+                    document.getElementById('grade').innerHTML='The grade of the student is C';
+                }
+                else if (percen>=40&&percen<50){
+                    document.getElementById('grade').innerHTML='The grade of the student is D';
+                }
+                else if (percen>=30&&percen<40){
+                    document.getElementById('grade').innerHTML='The grade of the student is E';
+                }
+                else{
+                    document.getElementById('grade').innerHTML="The student has failed";
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

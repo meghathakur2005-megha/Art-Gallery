@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Background color change</title>
+        <link rel="stylesheet" href="12march.css">
+    </head>
+    <body>
+        <h1>This program lets you</h1>
+        <ol>
+            <li>Click on a button</li>
+            <li>The background color changes</li>
+        </ol>
+        <br>
+        
+        <div class="boxBox">
+
+            <button class="red" onclick="changeColor('rgb(245, 80, 29)')">Red</button>
+            <button class='blue'onclick="changeColor('rgb(115, 215, 255)')">Blue</button>
+            <button class='yellow'onclick="changeColor('rgb(250, 241, 112)')">Yellow</button>
+            <button class='black'onclick="changeColor('rgb(5, 5, 0)')">Black</button>
+            <button class='green'onclick="changeColor('rgb(28, 135, 52)')">Green</button>
+            <button class='orange'onclick="changeColor('rgb(247, 171, 77)')">Orange</button>
+        </div>
+
+        <script>
+            function changeColor(color){
+                document.body.style.backgroundColor= color;
+               if(color=='rgb(5, 5, 0)'){
+                document.body.style.color='white';
+               }
+               else{
+                document.body.style.color='black';
+               }
+            }
+        </script>
+        <style>
+           .red:hover{
+    background-color: red;
+    color:white;
+}
+.blue:hover{
+    background-color: lightblue;
+    color: blue;
+}
+.yellow:hover{
+    background-color: yellow;
+    color: brown;
+}
+.black:hover{
+    background-color: black;
+    color:white;
+}
+.green:hover{
+    background-color: green;
+    color:lightgreen;
+}
+.orange:hover{
+    background-color: orange;
+    color: rgb(123, 15, 15);
+}
+h1{
+    text-align: center;
+}
+ol{
+    width: fit-content;
+    margin: auto;
+    
+}
+button{
+    text-align: center;
+}
+.boxBox{
+    text-align: center;
+}
+ 
+        </style>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>strings three</title>
+    </head>
+    <body>
+        <h1> This program lets you</h1>
+        <ol>
+            <li>input a string</li>
+            <li>tell the number of vowels in the string</li>
+            <li>reverse the string</li>
+            <li>tell if the string is a pallindrome of not</li>
+            <li>tell the number of words in the string</li>
+        </ol>
+        <input type="text" id="inputText" placeholder="Enter you string here">
+        <br><br><br>
+        <button onclick="findNum()">Find the number of vowels</button><br>
+        <div id="vowels"></div>
+        <br><br>
+        <button onclick="reversed()">Find the reverse of the string</button><br>
+        <div id="reversed"></div>
+        <br><br>
+        <button onclick="pallindrome()">Find if the string is a pallindrome</button><br>
+        <div id="pallindrome"></div>
+        <br><br>
+        <button onclick="stringNum()">Find the number of words in the string</button><br>
+        <div id="wordNum"></div>
+
+
+
+
+        <script>
+            function findNum(){
+                let a=document.getElementById("inputText").value;
+                let vowels="aeiouAEIOU";
+                let vowelCount=0;
+                for(let x=0; x<a.length;x++){
+                    if(vowels.includes(a[x])){vowelCount++;}
+                }
+                document.getElementById("vowels").innerHTML="the vowel count is:"+vowelCount;
+            }
+            function reversed(){
+                let a =document.getElementById("inputText").value;
+                document.getElementById("reversed").innerHTML=a.split("").reverse().join("");
+            }
+            function pallindrome(){
+                let a =document.getElementById("inputText").value;
+                let r=a.split('').reverse().join('');
+                if(a===r){
+                    document.getElementById("pallindrome").innerHTML="it is a pallindrome";
+                }
+                else{
+                    document.getElementById("pallindrome").innerHTML="it is not a pallindrome";
+                    
+                }
+                
+            }
+            function stringNum(){
+                let a =document.getElementById("inputText").value;
+                let words = a.trim().split(/\s+/);
+                let wordCount = words.length;
+                document.getElementById("wordNum").innerHTML=wordCount;
+
+            }
+        </script>
+    </body>
+</html>

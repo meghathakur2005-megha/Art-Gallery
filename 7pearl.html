@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Find the greatest number</title>
+        <link rel="stylesheet" href="17feb.css">
+    </head>
+    <body>
+        <div class="title">
+            <h1>This program lets you Find the Greatest Number</h1>
+        </div>
+        <script>
+            let a= prompt("Enter 1st number");
+            let b= prompt("Enter 2nd number");
+            let c= prompt("Enter 3rd number");
+            let msg="";
+            if(a>b){
+                if(a>c){ msg=a;}
+                else{msg=c;}
+            }
+                else{
+                    if(b>c)
+            {msg=b;}
+            else{msg=c;}
+            }
+            document.write("<div class='result'> Greatest no.="+ msg);
+            
+            
+        </script>
+     
+
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trying images</title>
+        
+        <body>
+            <h1>This program lets you </h1>
+            <ol>
+                <li>Select a fruit of your choice</li>
+                <li>Then it will show the image of the said fruit</li>
+            
+            </ol>
+            <br><br><br>
+            <div id="imgDisplay"> 
+                <img src="https://www.freshfruitsbasket.com/wp-content/uploads/2017/02/avasflowers-bon-appetit-fruit-basket_max.jpg">
+            </div>
+            <br><br><br>
+            <select id="selectFruit" onchange="fruitChange()">
+               <option value="0">Fruit</option>
+               <option value="1">Apple</option>
+               <option value="2">Banana</option>
+               <option value="3">Avacado</option>
+               <option value="4">Pineapple</option>
+               <option value="5">Kiwi</option>
+               <option value="6">Pear</option>
+               <option value="7">Lichi</option>
+               <option value="8">Grapes</option>
+               <option value="9">Mango</option>
+               <option value="10">Watermelon</option>
+            </select>
+         <script>
+            let fruits= [
+               'https://cdn.quicksell.co/-MI9NrW-AlHsrRC2nnz1/products/-O3qvQV4JvvICc7Yj7GV.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQVbcfX79YQsoUfd2GvfluBqo6PI7I7Ylrow&s',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9EYaQHTYBuaCBi0Dmb2ijsHJaAp3LoxZqFQ&s',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTLQChJt0lOWE_5ZAqzFD1CG3AiqUiL68uQ&s',
+                'https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/health_benefits_of_pineapple_slideshow/1800x1200_health_benefits_of_pineapple_slideshow.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQjAfVMSv0rvTIJl97anIxiSC29qJZKjXSg&s',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLiVU-OeaZ6Xg-qlgsk0KxPAJ4uURAVi5pUQ&s',
+                'https://m.media-amazon.com/images/I/81F6bQaa2NL.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCaSUv7rhNDxj6yq2R3a4kes3rLpSeRsQu8Q&s',
+                'https://cdn.britannica.com/84/22184-050-963C9964/Mango.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5ii68PYGCAISdb-7v-x4-I1BK7-KSeObVw&s'
+
+            ]
+           
+
+            
+            function fruitChange(){
+                let choice= document.getElementById("selectFruit").value;
+                document.getElementById("imgDisplay").innerHTML="<img src='"+fruits[choice]+"'img>";
+            }
+         </script>
+         <style>
+            body{
+    background-color: rgb(183, 219, 187);
+}
+h1{
+    text-align: center;
+}
+ol{
+    width: fit-content;
+    margin: auto;
+
+}
+.imgDisplay{
+display: flex;
+justify-content: center;
+}
+ img{
+    display: block;
+    margin: auto;
+    width: 250px;
+    height: auto;
+    box-shadow: 0px 0px 40px rgb(81, 117, 81);
+ }
+ select{
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(122, 176, 122);
+ }
+ select:hover{
+    color: red;
+ }
+         </style>
+        </body>
+    </head>
+
+    
+</html>

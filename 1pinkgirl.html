@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Understanding strings</title>
+        
+    </head>
+    <body>
+        <h1> This program lets you:</h1>
+        <ol>
+            <li>Enter a string</li>
+            <li>Find out its lenght</li>
+            <li>turn to uppercase</li>
+            <li>turn to lowercase</li>
+            <li>find the first character</li>
+            <li>find the last character</li>
+
+        </ol>
+        <input type="text" id="stringInput" placeholder="Enter your string here">
+        <br><br>
+        <button onclick="length()">Click to find length</button>
+        <br>
+        <div id="length"></div>
+        <br><br>
+        
+        <button onclick="upperCase()">Click to turn to uppercase</button>
+        <br>
+        <div id="uppercase"></div>
+        <br><br>
+        
+        
+        <button onclick="lowerCase()">Click to turn to lowercase</button>
+        <br>
+        <div id="lowercase"></div>
+        <br><br>
+        
+        
+        <button onclick="firstChar()">Click to find the first character</button>
+        <br>
+        <div id="firstChar"></div>
+         <br><br>
+       
+       
+         <button onclick="lastChar()">Click to find the last character</button>
+        <br>
+        <div id="lastChar"></div>
+        
+    
+
+        <script>
+            function length(){
+                let str=  document.getElementById("stringInput").value;
+                document.getElementById("length").innerHTML="length:"+ str.length;
+            }
+            function upperCase(){
+                let str=  document.getElementById("stringInput").value;
+                document.getElementById('uppercase').innerHTML="UpperCase:"+ str.toUpperCase();
+            }
+            function lowerCase(){
+    let str=  document.getElementById("stringInput").value;
+    document.getElementById("lowercase").innerHTML="lowerCase:"+ str.toLowerCase();
+    
+}
+function firstChar(){
+    let str=  document.getElementById("stringInput").value;
+    document.getElementById("firstChar").innerHTML="First character:"+str.charAt(0);
+    
+}
+function lastChar(){
+    let str=  document.getElementById("stringInput").value;
+    document.getElementById("lastChar").innerHTML="last character:"+str.charAt(str.length-1);
+}
+
+        </script>
+        <style>
+            body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgb(154, 163, 67);
+}
+
+h1{
+    background-color: bisque;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    text-align: center;
+}
+
+input{
+    padding:10px;
+width: 200px;
+font-size: 16px;
+background-color: beige;
+border-radius: 20px;
+box-shadow: 5px 5px 5px grey;
+}
+
+button{
+    background-color: beige;
+    color:black;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow:5px 5px 5px grey;
+    
+}
+button:hover{
+    background-color: rgb(61, 65, 20);
+    color: white;
+
+}
+        </style>
+    </body>
+</html>

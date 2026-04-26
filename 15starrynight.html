@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Change Every Second</title>
+</head>
+<body>
+
+<h1 id="myText">This program lets you change the color of your text every second</h1>
+<p id="newText">This program was created using Array where a 
+    array with diffent colors was created. Then 
+    using  function we change th enumber of array value which 
+    was displayed. We also set the interval to 1000 which is one second
+    as it is in milliseconds.
+</p>
+
+<script>
+    
+    const colors = ["red", "blue", "green", "orange", "purple","lightblue"];
+
+    let index = 0;
+
+    
+    function changeColor() {
+        const text = document.getElementById("myText");
+
+        text.style.color = colors[index];
+
+        index++;
+
+        
+        if (index === colors.length) {
+            index = 0;
+        }
+    }
+
+    
+    setInterval(changeColor, 1000);
+    const p=['#ebb113','#43a628','#7852d1','#f030d9','#d14972','#6c8ccc'];
+    let num=0;
+    function changepColor(){
+        const t=document.getElementById('newText');
+       t.style.color=p[num];
+       num++;
+       if (num===p.length){
+        num=0;
+       }  
+    }
+setInterval(changepColor,1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Generating numbers</title>
+</head>
+<body>
+    <h2>This program lets you enter a number and then tell how many even number you want to printe after it.</h2>
+    <input type="number" id="num1" placeholder="Enter your start number">
+    <br><br>
+    <input type="number" id="num2" placeholder="Enter how many more even numbers you want">
+    <br><br>
+    <button onclick="answer()">Press me!</button>
+    <div id="displayResult"></div>
+    <script>
+        function answer()
+        { 
+        let a = parseFloat(document.getElementById("num1").value);
+        let b= parseFloat(document.getElementById("num2").value);
+        let resultDiv = document.getElementById("displayResult");
+        resultDiv.innerHTML="";
+            
+               if(a%2 !==0){
+                a=a+1;
+               }
+               else{
+                a=a+2
+               }
+               let count=0;
+               while(count<=b){
+                resultDiv.innerHTML+=a +"<br>";
+                a+=2;
+                count++;
+               }
+                
+
+                
+           
+        }
+
+        </script>
+        </body>

@@ -1,0 +1,402 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Website</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        
+            <audio id="music" loop autoplay >
+                <source src="l_amore_dice_ciao.mp3" type="audio/mpeg">
+            </audio>
+       
+        <div class="animation">
+            <video autoplay muted id="vid1">
+                <source src="intro_animation.mp4">
+          
+            </video>
+            <video autoplay muted loop id="vid2" style="display: none;">
+                <source src="button.mp4">
+            </video>
+        </div>
+        <div id="popup">
+            <p>Do you wish to enter?</p>
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <div id="mainContent" style="display: none;">
+            <button id="leftBtn" class="scrollBtn">◀</button>
+            <div id="gallery">
+
+                <img src="art gallery .jpg" id="long">
+                <button id="rightBtn" class="scrollBtn">▶</button>
+                <div id="frameContainer">
+                    
+                    <img src="pinkgirl.png" class="frame"          id="frame1">
+                    <img src="greenflower.png" class="frame"       id="frame2">
+                    <img src="lovely.png" class="frame"            id="frame3">
+                    <img src="ghost.png" class="frame"             id="frame4">
+                    <img src="rawbro.png" class="frame"            id="frame5">
+                    <img src="whiteflower.png" class="frame"       id="frame6">
+                    <img src="pearl.png" class="frame"             id="frame7">
+                    <img src="strawberry (1).png" class="frame"    id="frame8">
+                    <img src="ophelia.png" class="frame"           id="frame9">
+                    <img src="sun.png" class="frame"               id="frame10">
+                    <img src="rabbit (1).png" class="frame"        id="frame11">
+                    <img src="Illustration54.png" class="frame"    id="frame12">
+                    <img src="confusion.png" class="frame"         id="frame13">
+                    <img src="cactus (1).png" class="frame"        id="frame14">
+                    <img src="starry night.png" class="frame"      id="frame15">
+                    <img src="lemon.png" class="frame"             id="frame16">
+                    <img src="ghost.png" class="frame"             id="frame17">
+                    
+                </div>
+            </div>
+            <img id="girl" src="Illustration50.gif">
+        </div>
+        <div id="modalContainer">
+            <div id="modalContent" class="modalContent">
+                <span id="clsBtn">&times;</span>
+                <iframe id="wall"></iframe>
+            </div>
+        </div>
+        <script>
+            const vid1=document.getElementById('vid1');
+            const vid2=document.getElementById('vid2');
+            const popup=document.getElementById('popup');
+            const yesBtn=document.getElementById('yesBtn');
+            const noBtn=document.getElementById('noBtn');
+            const mainContent=document.getElementById('mainContent');
+            vid1.addEventListener('ended', function(){
+                vid1.style.display='none';
+                vid2.style.display='block';
+                vid2.play();
+                popup.style.display='block';
+            })
+            yesBtn.addEventListener('click',function(){
+                document.querySelector('.animation').style.display='none';
+                popup.style.display='none';
+                mainContent.style.display='block';
+            })
+            noBtn.addEventListener('mouseover', function(){
+
+    const popupRect = popup.getBoundingClientRect();
+
+    const buttonWidth = noBtn.offsetWidth;
+    const buttonHeight = noBtn.offsetHeight;
+
+    const maxX = popupRect.width - buttonWidth;
+    const maxY = popupRect.height - buttonHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+    
+});
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+
+leftBtn.addEventListener('click', function(){
+
+    mainContent.scrollBy({
+        left: -200,
+        behavior: 'smooth'
+    });
+
+});
+
+rightBtn.addEventListener('click', function(){
+
+    mainContent.scrollBy({
+        left: 200,
+        behavior: 'smooth'
+    });
+
+});
+window.onload = function () {
+
+    const girl = document.getElementById("girl");
+
+    /* move to center */
+
+    setTimeout(function () {
+
+        girl.style.right = "45%";
+
+    }, 100);
+
+
+    /* after movement finishes */
+
+    setTimeout(function () {
+
+        girl.src = "girlback.png";
+
+    }, 2100);
+
+};
+
+const girl = document.getElementById("girl");
+
+/* WALK when button is pressed */
+
+function startWalking() {
+
+    girl.src = "";
+    girl.src = "Illustration50.gif";
+
+}
+
+/* STOP when button is released */
+
+function stopWalking() {
+
+    girl.src = "girlback.png";
+
+}
+
+let scrollInterval;
+
+/* START scrolling */
+
+function startScrollLeft() {
+
+    startWalking();
+
+    scrollInterval = setInterval(function () {
+
+        mainContent.scrollBy({
+            left: -15,
+            behavior: "auto"
+        });
+
+    }, 16); // ~60 FPS
+
+}
+
+function startScrollRight() {
+
+    startWalking();
+
+    scrollInterval = setInterval(function () {
+
+        mainContent.scrollBy({
+            left: 5,
+            behavior: "auto"
+        });
+
+    }, 16);
+
+}
+
+/* STOP scrolling */
+
+function stopScroll() {
+
+    clearInterval(scrollInterval);
+
+    stopWalking();
+
+}
+
+/* LEFT BUTTON */
+
+leftBtn.addEventListener("mousedown", startScrollLeft);
+leftBtn.addEventListener("mouseup", stopScroll);
+leftBtn.addEventListener("mouseleave", stopScroll);
+
+/* RIGHT BUTTON */
+
+rightBtn.addEventListener("mousedown", startScrollRight);
+rightBtn.addEventListener("mouseup", stopScroll);
+rightBtn.addEventListener("mouseleave", stopScroll);
+
+
+const frame1=document.getElementById('frame1');
+const frame2=document.getElementById('frame2');
+const frame3=document.getElementById('frame3');
+const frame4=document.getElementById('frame4');
+const frame5=document.getElementById('frame5');
+const frame6=document.getElementById('frame6');
+const frame7=document.getElementById('frame7');
+const frame8=document.getElementById('frame8');
+const frame9=document.getElementById('frame9');
+const frame10=document.getElementById('frame10');
+const frame11=document.getElementById('frame11');
+const frame12=document.getElementById('frame12');
+const frame13=document.getElementById('frame13');
+const frame14=document.getElementById('frame14');
+const frame15=document.getElementById('frame15');
+const frame16=document.getElementById('frame16');
+const frame17=document.getElementById('frame17');
+const modalContainer = document.getElementById("modalContainer");
+const modalContent=document.getElementById('modalContent');
+const clsBtn =document.getElementById("clsBtn");
+const wall=document.getElementById('wall');
+
+
+
+frame1.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='1pinkgirl.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame2.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='2greenflower.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame3.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='3iloveu.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame4.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='4ghost.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame5.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='5painter.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame6.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='6whiteflower.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame7.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='7pearl.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame8.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='8strawberry.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+
+frame9.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='9ophelia.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame10.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='10sun.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame11.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='11rabbit.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame12.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='12girlpurple.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+frame13.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='13confusion.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+
+frame14.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='14cactus.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+
+frame15.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='15starrynight.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+
+
+frame16.addEventListener("click", function () {
+ modalContainer.style.display = "flex";
+wall.src='16lemon.html';
+});
+
+clsBtn.addEventListener("click", function () {
+ modalContainer.style.display = "none";
+});
+ </script>
+    </body>
+</html> 
+    
+
+ 
+
+
+
+

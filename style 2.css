@@ -1,0 +1,73 @@
+.first{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    font-weight: 300;
+}
+.second{
+    font-style: italic;
+    font-weight: 600;
+}
+.third{
+    font-size: small;
+    font-weight: lighter;
+}
+.fourth{
+    font-variant: small-caps;
+    font-size: xx-large;
+}
+.fifth{
+    font-variant:small-caps ;
+    font-style:oblique;
+}
+.sixth{
+    text-decoration: underline;
+    text-decoration-color: brown;
+    text-decoration-style: double;
+}
+.seventh{
+    text-decoration:underline;
+    text-decoration-style: wavy;
+    text-decoration-color: blue;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none;
+}
+.container{
+    display: flex;
+    gap: 20px;
+}
+.text{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+   
+}
+.textshadow{
+    background-color: bisque;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    text-shadow: 2px 2px 4px green;
+    font-size: xx-large;
+}
+.another{
+    text-shadow: 1px 5px 2px rgb(30, 231, 97);
+    background-color: rgb(18, 64, 22);
+    color: rgb(239, 233, 232);
+    font-size: x-large;
+    padding: 20px;
+}
+.wordspacing{
+    word-spacing: 10px;
+    background-color:rgb(127, 92, 185);
+    color: blanchedalmond;
+    padding-left: 20px;
+    padding:10px;
+}
+.wordspace2
+{
+    word-spacing: 40px;
+}
+.lineheight{
+    
+        line-height: 1.6;
+}

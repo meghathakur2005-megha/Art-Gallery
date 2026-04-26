@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head> <title> prining square of natural no. and sum</title></head>
+    <body>
+        <h2 style="text-align: center;">This is a program that gives you know the square root of the first natural numbers up to your choice.</h2>
+        <h3 style="text-align: center;">It will also add those numbers</h3>
+        <hr>
+        <input type="number" id="endLimit" placeholder="Enter end limit">
+        <br><br>
+        <button onclick="calculateSquare()">Press me to find square</button>
+        <br><br>
+        <button onclick="calculateSum()">Press me to find the sum</button>
+        <div id="resultSquare"></div>
+        <div id="resultSum"></div>
+        <script>
+            function calculateSquare(){
+                let end =parseInt(document.getElementById("endLimit").value);
+                let square=document.getElementById("resultSquare");
+                square.innerHTML="";
+                let i =1;
+                do{
+                    let res =i*i;
+                    square.innerHTML+= "square of"+ i +"is"+ res+"<br>";
+                    i++;
+                }
+            while(i<=end);
+
+            }
+            function calculateSum(){
+                let end =parseInt(document.getElementById("endLimit").value);
+                let sumDisplay=document.getElementById("resultSum");
+                sumDisplay.innerHTML="";
+                let a =1;
+                
+                let total=0;
+                while(a<=end){
+                    let ans=a*a;
+                    total+=ans;
+                    a++;
+                }
+                sumDisplay.innerHTML= total;
+            }
+        </script>
+    </body>
+</html>
